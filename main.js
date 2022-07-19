@@ -1,4 +1,5 @@
 const btn = document.getElementById('btn');
+var result = document.getElementById('result');
 const stop = 3000;
 var setInterval1;
 var setInterval2;
@@ -12,6 +13,10 @@ var imgArray = [
   './img/phaser.png',
   './img/p5.png'
 ]
+var con = "Congratulations!!"
+var again = "try again!!!"
+
+
 
 var s1 = document.getElementById('s1');
 var s2 = document.getElementById('s2');
@@ -27,7 +32,7 @@ function _clearInterval(params) {
 
 
  btn.addEventListener('click', ()=>{
-
+  result.innerText = "";
   btn.disabled = true;
 
      function displayImage1() {
@@ -101,11 +106,15 @@ function _clearInterval(params) {
         if (counts.hasOwnProperty.call(counts, key)) {
           var element = counts[key];
           if (element >= 2) {
-            document.body.style.background= "#A0D995";
+           
+            document.body.style.background= "#3CCF4E";
+           result.innerText = con + " 😉";
            
             return;
           } else {
+            
             document.body.style.background= "#1B2430";
+            result.innerText = again + " 😭";
           
           }
         }
